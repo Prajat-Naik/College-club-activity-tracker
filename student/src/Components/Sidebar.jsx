@@ -16,13 +16,15 @@ import {
 } from '@mui/material';
 import {
   Dashboard as DashboardIcon,
-  People as PeopleIcon,
-  Groups as GroupsIcon,
-  Assessment as ReportIcon,
-  Settings as SettingsIcon,
+  // Removed: People as PeopleIcon,
+  // Removed: Groups as GroupsIcon,
+  Assessment as ReportIcon, // Reused for Progress
+  // Removed: Settings as SettingsIcon,
   Logout as LogoutIcon,
   ChevronLeft as ChevronLeftIcon,
   School as SchoolIcon,
+  Event as EventIcon, // New import for Events page
+  ListAlt as ListAltIcon, // New import for My Events page
 } from '@mui/icons-material';
 import { useNavigate, useLocation } from 'react-router-dom';
 
@@ -34,10 +36,9 @@ function Sidebar({ open, onClose }) {
   const theme = useTheme();
 
   const menuItems = [
-    { text: 'Dashboard', icon: <DashboardIcon />, path: '/dashboard' },
-    { text: 'Manage Students', icon: <PeopleIcon />, path: '/students' },
-    { text: 'Manage Clubs', icon: <GroupsIcon />, path: '/clubs' },
-    { text: 'Reports', icon: <ReportIcon />, path: '/Report' },
+    { text: 'Events', icon: <EventIcon />, path: '/events' },
+    { text: 'My Events', icon: <ListAltIcon />, path: '/my-events' },
+    { text: 'Progress', icon: <ReportIcon />, path: '/progress' },
   ];
 
   const handleNavigation = (path) => {
@@ -116,14 +117,14 @@ function Sidebar({ open, onClose }) {
               height: 40,
             }}
           >
-            A
+            S
           </Avatar>
           <Box>
             <Typography variant="subtitle2" fontWeight="medium">
-              Admin User
+              Student User
             </Typography>
             <Typography variant="caption" color="text.secondary">
-              admin@edumanage.com
+              student@edumanage.com
             </Typography>
           </Box>
         </Box>

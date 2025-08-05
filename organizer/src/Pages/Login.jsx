@@ -68,7 +68,7 @@ const Login = () => {
           gutterBottom
           sx={{ fontWeight: 'bold', color: '#333' }}
         >
-          Admin Login
+          Organiser Login
         </Typography>
 
         <form onSubmit={handleLogin} noValidate>
